@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Черновик-1</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="front">
+      <p class="front__title">Поле "Лицевая сторона"</p>
+      <p class="front__title">Три сущности для Инессы?"</p>
+      <span>(Укажите ответы через запятую и пробел)</span>
+      <br>
+      <input class="front__input" type="text"
+        placeholder="Пример: пироженое, мороженое"
+      >
+    </div>
+    
+    <div class="back display-none">
+      <p class="back__title">Поле "Оборотная сторона"</p>
+      <p class="back__answer">Лисичка, Принцесса, Фея</p>
+    </div>
+    
+    <div class="result display-none">
+      <p class="result__title">Результат проверки</p>
+      <div class="result__wrapper-front">
+        <p class="result__title">Мой ответ</p>
+        <!-- <span class="result__span result__span_green">111</span> -->
+        <!-- <span class="result__span result__span_red">222</span> -->
+      </div>
+
+      <div class="result__wrapper-back display-none">
+        <p class="result__title">Вы не назвали</p>
+        <!-- <span class="result__span result__span_green">111</span> -->
+        <!-- <span class="result__span result__span_red">222</span> -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>
