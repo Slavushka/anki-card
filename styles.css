@@ -57,7 +57,9 @@ button {
   color: inherit;
   background-color: inherit;
 }
+
 .front__input::placeholder {
+  font-size: 14px;
   opacity: 0.5;
 }
 
