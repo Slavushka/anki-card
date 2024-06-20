@@ -60,13 +60,13 @@ frontAnswerStr.addEventListener('blur', () => {
 
   // Проверка правильного ответа и выборка которых нет в ответе.
   for (let i = 0; i < backAnswerArray.length; i++) {
-      if (frontAnswerArray.indexOf(backAnswerArray[i]) === -1) {
+    if (frontAnswerArray.indexOf(backAnswerArray[i]) === -1) {
       console.log(
         'Вы не ответили: ',
         backAnswerArray[i]
       );
       $resultWrapperBack.classList.remove('display-none');
       resultSpan('result__span_red', backAnswerArray[i], $resultWrapperBack);
-  };
+    };
   };
 }, {once: true});
