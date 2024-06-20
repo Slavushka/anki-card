@@ -41,12 +41,15 @@ frontAnswerStr.addEventListener('blur', () => {
   // Сравниваем ответы с правильными.
   // Проверка ответа и выделение по цвету.
   $result.classList.toggle('display-none');
+  let count = 0;
   for (let i = 0; i < frontAnswerArray.length; i++) {
     if (backAnswerArray.indexOf(frontAnswerArray[i]) !== -1) {
       console.log(
         'Есть такое: ',
         frontAnswerArray[i]
       );
+      count = count + 1;
+      console.log('count', count);
       // $back.classList.toggle('display-none');
       resultSpan('result__span_green', frontAnswerArray[i], $resultWrapperFront);
     } else {
@@ -59,14 +62,21 @@ frontAnswerStr.addEventListener('blur', () => {
   };
 
   // Проверка правильного ответа и выборка которых нет в ответе.
-  for (let i = 0; i < backAnswerArray.length; i++) {
-    if (frontAnswerArray.indexOf(backAnswerArray[i]) === -1) {
-      console.log(
-        'Вы не ответили: ',
-        backAnswerArray[i]
-      );
-      $resultWrapperBack.classList.remove('display-none');
-      resultSpan('result__span_red', backAnswerArray[i], $resultWrapperBack);
+  if (count !== 0) {
+    for (let i = 0; i < backAnswerArray.length; i++) {
+      if (frontAnswerArray.indexOf(backAnswerArray[i]) === -1) {
+        console.log(
+          'Вы не ответили: ',
+          backAnswerArray[i]
+        );
+        $resultWrapperBack.classList.remove('display-none');
+        resultSpan('result__span_red', backAnswerArray[i], $resultWrapperBack);
+      };
     };
+  } else {
+    console.log('Вы ничего не угадали!!!');
+    const $upsss = document.createElement('div');
+    $upsss.innerHTML = '<p>Вы ничего не угадали!!!<br>Попробуйте ещё раз.</p>'
+    $resultWrapperFront.append($upsss)
   };
 }, {once: true});
